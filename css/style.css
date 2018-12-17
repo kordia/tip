@@ -1,0 +1,14 @@
+body{
+    background-color: lightblue;
+}
+.layout{
+    color: blueviolet;
+}
+.title{
+    padding-left: 200px;
+    padding-top: 50px;
+}
+.box{
+     padding-left: 200px;
+     padding-top: 20px;
+}

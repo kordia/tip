@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Tip Calculator</title>
+</head>
+<body>
+    <div class= "layout">
+        <div class= "title container">
+            <div class='row'>
+                <div class='col-sm-12'> 
+                    <h1>Tip Calculator</h1>
+                </div>
+            </div>
+        </div>
+        <div class= "box container">
+            <div class='row'>
+                <div class='col-sm-12'> 
+                    <p>Enter the bill amount for your meal: $</p>
+                    <input type="text" id=bill> <br>
+                    <p>Tip Percentage:</p> 
+                    <input type= "range" min="0" max="20" step="1" onchange="tipCalculate(this.value,'bill')" style="width: 400px;">
+                    <span id="slideval">0%</span>
+                    <h2>Tip to leave = <span id="tip"></span></h2>
+                </div>
+            </div>
+        </div>          
+    </div>
+    
+    <script>
+    function tipCalculate(slider,bill){
+        var tip = document.getElementById('tip');
+        var slideval = document.getElementById('slideval');
+        var bill = document.getElementById(bill).value;
+        var prcnt = slider * .01;
+        tip.innerHTML = "$"+(bill * prcnt).toFixed(2);
+        slideval.innerHTML = slider+"%";
+    }
+    
+    </script>
+</body>
+</html>
